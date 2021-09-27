@@ -40,7 +40,7 @@ TEST(Lexer_Test, NextTokenWithKeywordsAndIdentifiers)
 {
     const int NUM_OF_TEST = 26;
     Lexer *lexer = new Lexer(
-        "have five = 5; has ten = 10;"
+        "have five 8=D 5; has ten = 10;"
         ""
         "have add = job(x,y) {"
         "x + y;"

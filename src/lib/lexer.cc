@@ -77,6 +77,7 @@ Token *Lexer::next_token()
                 token = new Token(COMPILER_ASSIGN, "=");
                 this->read_char();
                 this->read_char();
+                this->read_char();
                 return token;
             }
             else
