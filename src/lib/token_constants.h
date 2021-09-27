@@ -17,4 +17,4 @@
 
 // Keywords
 #define COMPILER_FUNCTION "job"
-#define COMPILER_LET "have"
+#define COMPILER_DEC_VARIABLE "have"

@@ -20,6 +20,13 @@ public:
     char *get_ch();
     void read_char();
     Token *next_token();
+    bool ch_is_letter();
+    string read_identifier();
+    TokenType lookup_ident(string const &ident);
+    void skip_whitespace();
+    string read_number();
+    bool ch_is_digit();
+    string preview_input(int next);
 };
 
 #endif

@@ -1,6 +1,7 @@
-#A simple compiler written in C++ 💻
+# A simple compiler written in C++ 💻
 
 ---
+
 ## Roadmap 🪧
 
 Intepreting Mode
