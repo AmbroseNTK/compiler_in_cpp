@@ -1,0 +1,8 @@
+have a is 2;
+have b is 3;
+
+have add is job(x,y) {
+    <=8 x + b;
+}
+
+have result 8=D add(a,b);

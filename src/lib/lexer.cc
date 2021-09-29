@@ -36,6 +36,13 @@ Token *Lexer::next_token()
     switch (this->ch)
     {
     case '=':
+        if (this->preview_input(2) == "==")
+        {
+            token = new Token(COMPILER_EQ, COMPILER_EQ);
+            this->read_char();
+            this->read_char();
+            return token;
+        }
         token = new Token(COMPILER_ASSIGN, string(1, this->ch));
         break;
     case ',':
@@ -59,8 +66,44 @@ Token *Lexer::next_token()
     case '+':
         token = new Token(COMPILER_PLUS, string(1, this->ch));
         break;
+    case '-':
+        token = new Token(COMPILER_MINUS, string(1, this->ch));
+        break;
+    case '*':
+        token = new Token(COMPILER_ASTERISK, string(1, this->ch));
+        break;
+    case '/':
+        token = new Token(COMPILER_SLASH, string(1, this->ch));
+        break;
+    case '!':
+        if (this->preview_input(2) == "!=")
+        {
+            token = new Token(COMPILER_NOT_EQ, COMPILER_NOT_EQ);
+            this->read_char();
+            this->read_char();
+            return token;
+        }
+        token = new Token(COMPILER_BANG, string(1, this->ch));
+        break;
+    case '<':
+        if (this->preview_input(3) == "<=8")
+        {
+            token = new Token(COMPILER_RETURN, "<=8");
+            this->read_char();
+            this->read_char();
+            this->read_char();
+            return token;
+        }
+
+        token = new Token(COMPILER_LT, string(1, this->ch));
+
+        break;
+    case '>':
+        token = new Token(COMPILER_GT, string(1, this->ch));
+        break;
     case 0:
         token = new Token(COMPILER_EOF, "");
+        break;
     default:
 
         if (this->ch_is_letter())
@@ -73,7 +116,6 @@ Token *Lexer::next_token()
         {
             if (this->preview_input(3) == "8=D")
             {
-                cout << "has 8=D";
                 token = new Token(COMPILER_ASSIGN, "=");
                 this->read_char();
                 this->read_char();
