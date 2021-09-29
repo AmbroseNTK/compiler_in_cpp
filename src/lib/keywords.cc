@@ -1,4 +1,4 @@
-#include "keywords.h"
+#include "headers/keywords.h"
 
 map<string, TokenType> Keywords::kwmap = {
     {"job", COMPILER_FUNCTION},

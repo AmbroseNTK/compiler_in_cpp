@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../lib/lexer.h"
-#include "../lib/repl.h"
+#include "../lib/headers/lexer.h"
+#include "../lib/headers/repl.h"
 
 using namespace std;
 

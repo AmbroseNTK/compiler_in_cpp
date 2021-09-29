@@ -1,4 +1,4 @@
-#include "ast.h"
+#include "headers/ast.h"
 
 string *Program::token_literal()
 {

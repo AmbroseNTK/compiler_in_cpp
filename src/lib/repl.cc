@@ -1,8 +1,10 @@
-#include "repl.h"
+
 #include <iostream>
 #include <string>
-#include "lexer.h"
-#include "token_constants.h"
+
+#include "headers/lexer.h"
+#include "headers/token_constants.h"
+#include "headers/repl.h"
 
 using namespace std;
 

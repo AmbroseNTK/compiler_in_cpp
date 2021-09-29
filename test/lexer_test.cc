@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
 
-#include "src/lib/token.h"
-#include "src/lib/lexer.h"
-#include "src/lib/token_constants.h"
+#include "src/lib/headers/token.h"
+#include "src/lib/headers/lexer.h"
+#include "src/lib/headers/token_constants.h"
 
 #include <string>
 #include <iostream>

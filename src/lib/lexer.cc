@@ -1,9 +1,10 @@
-#include "lexer.h"
+
 #include <iostream>
 #include <string>
 
-#include "token_constants.h"
-#include "keywords.h"
+#include "headers/token_constants.h"
+#include "headers/keywords.h"
+#include "headers/lexer.h"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "token.h"
+#include "headers/token.h"
 
 Token::Token(TokenType const &type, string const &literal)
 {
