@@ -31,7 +31,8 @@ protected:
     vector<Statement> statements;
 
 public:
-    virtual string *token_literal() = 0;
+    string *token_literal();
+    vector<Statement> *get_statements();
 };
 
 class Identifier
@@ -41,11 +42,12 @@ protected:
     string *value;
 
 public:
+    Identifier(Token *token, string *valuue);
     void expression_node();
     string *token_literal();
 };
 
-class LetStatement
+class DecVarStatement : public Statement
 {
 protected:
     Token *token;
@@ -53,8 +55,11 @@ protected:
     Expression *value;
 
 public:
+    DecVarStatement(Token *token);
     void statement_node();
     string *token_literal();
+    void set_name(Identifier *name);
+    void set_expression(Expression *value);
 };
 
 #endif

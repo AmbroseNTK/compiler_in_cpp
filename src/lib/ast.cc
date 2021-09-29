@@ -8,12 +8,38 @@ string *Program::token_literal()
     }
 }
 
-string *LetStatement::token_literal()
+vector<Statement> *Program::get_statements()
+{
+    return &this->statements;
+}
+
+DecVarStatement::DecVarStatement(Token *token)
+{
+    this->token = token;
+}
+
+string *DecVarStatement::token_literal()
 {
     return this->token->get_literal();
 }
 
-void LetStatement::statement_node() {}
+void DecVarStatement::statement_node() {}
+
+void DecVarStatement::set_name(Identifier *name)
+{
+    this->name = name;
+}
+
+void DecVarStatement::set_expression(Expression *expression)
+{
+    this->value = expression;
+}
+
+Identifier::Identifier(Token *token, string *value)
+{
+    this->token = token;
+    this->value = value;
+}
 
 string *Identifier::token_literal()
 {

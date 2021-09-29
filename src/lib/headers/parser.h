@@ -15,6 +15,11 @@ protected:
 public:
     void next_token();
     Program *parse_program();
+    Statement *parse_statement();
+    DecVarStatement *parse_dec_variable_statement();
+    bool cur_token_is(TokenType type);
+    bool peek_token_is(TokenType type);
+    bool expect_peek(TokenType type);
 };
 
 #endif
